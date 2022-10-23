@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export const Modal = ({ largeImg, about, onModalClose }) => {
   return (
-    <Overlay onClick={onModalClose}>
+    <Overlay onClick={e => e.target === e.currentTarget && onModalClose()}>
       <ModalStyled>
         <img src={largeImg} alt={about} />
       </ModalStyled>
